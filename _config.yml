@@ -1,5 +1,5 @@
 title:              Fabbi D3 Blog
-email:              your-email@example.com
+email:              
 description:        Fabbi D3 Blog
 author:             D3-Fabbi
 baseurl:            "/blogs"
@@ -7,8 +7,8 @@ url:                "https://fabbid3.github.io/"
 
 # Social Profiles
 twitter_username:   #
-github_username:    thangnc@fabbi.io
-facebook_username:  congthang.ktqs
+github_username:    fabbid3
+facebook_username:  
 linkedin_username:
 
 # Add your google-analytics ID here to activate google analytics
