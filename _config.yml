@@ -2,8 +2,8 @@ title:              Fabbi D3 Blog
 email:              your-email@example.com
 description:        Fabbi D3 Blog
 author:             D3-Fabbi
-baseurl:            ""
-url:                "https://blackrockdigital.github.io"
+baseurl:            "/blogs"
+url:                "https://fabbid3.github.io/"
 
 # Social Profiles
 twitter_username:   #
