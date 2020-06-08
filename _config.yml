@@ -1,0 +1,25 @@
+title:              Fabbi D3 Blog
+email:              your-email@example.com
+description:        Fabbi D3 Blog
+author:             D3-Fabbi
+baseurl:            ""
+url:                "https://blackrockdigital.github.io"
+
+# Social Profiles
+twitter_username:   #
+github_username:    thangnc@fabbi.io
+facebook_username:  congthang.ktqs
+linkedin_username:
+
+# Add your google-analytics ID here to activate google analytics
+google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+
+# Build settings
+markdown:           kramdown
+paginate:           5
+paginate_path:      "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  # - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
