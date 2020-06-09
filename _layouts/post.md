@@ -19,9 +19,24 @@ layout: default
             {% endif %}
             <span class="meta">Posted by
               <a href="#">{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</a>
-              on {{ page.date | date: '%B %d, %Y' }} &middot; {% include read_time.html
-              content=page.content %}
+              on {{ page.date | date: '%B %d, %Y' }}
             </span>
+            {% if page.categories %}
+            <br/><span class="meta">
+              <i class="fa fa-list-alt" aria-hidden="true"></i>
+                {% for c in page.categories %}
+                  <span>{{ c }}</span>
+                {% endfor %}
+            </span><br/>
+            {% endif %}
+            {% if page.tags %}
+            <span>
+              <i class="fa fa-tag" aria-hidden="true"></i>
+              {% for t in page.tags %}
+                <span>{{ t }}</span>
+              {% endfor %}
+            </span>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -31,13 +46,9 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-
         {{ content }}
-
         <hr>
-
         <div class="clearfix">
-
           {% if page.previous.url %}
           <a class="btn btn-primary float-left" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">&larr; Previous<span class="d-none d-md-inline">
               Post</span></a>
@@ -46,9 +57,7 @@ layout: default
           <a class="btn btn-primary float-right" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">Next<span class="d-none d-md-inline">
               Post</span> &rarr;</a>
           {% endif %}
-
         </div>
-
       </div>
     </div>
   </div>

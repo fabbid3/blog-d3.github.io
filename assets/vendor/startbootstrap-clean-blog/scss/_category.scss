@@ -1,0 +1,33 @@
+.list__category{
+    margin-top: 30px;
+    font-size: 18px;
+    .category{
+        margin-top: 15px;
+        .nav__category{
+            padding-left: 10px;
+            color: #0085A1 ;
+            .item--category{
+                color: #0085A1 ;
+                list-style-type: none;
+    
+                a{
+                    color: #0085A1;
+                    text-decoration: none;
+    
+                    &:hover{
+                        text-decoration: none;
+                        color: #000000;
+                    }
+                }
+            }
+        }
+    }
+
+    .tags{
+        margin-top: 15px;
+        .nav__tags{
+            padding-left: 10px;
+        }
+    }
+}
+

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/blogs/2017/10/27/dinosaurs.html</loc>
-<lastmod>2017-10-27T10:45:13+07:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/blogs/demo/</loc>
-<lastmod>2020-06-08T13:45:00+07:00</lastmod>
+<loc>http://localhost:4000/blogs/django-gioi-thieu/</loc>
+<lastmod>2020-06-08T16:50:00+07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/blogs/about.html</loc>
@@ -16,6 +12,12 @@
 </url>
 <url>
 <loc>http://localhost:4000/blogs/posts/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/blogs/tags/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/blogs/categories/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/blogs/</loc>
