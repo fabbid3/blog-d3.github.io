@@ -44,10 +44,13 @@
           <a class="nav-link" href="/blogs/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/blogs/about">About</a>
+          <a class="nav-link" href="/blogs/categories">Categories</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/blogs/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blogs/tags">Tags</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/blogs/contact">Contact</a>
@@ -79,67 +82,170 @@
 
   <div class="container">
     <div class="row">
+      <div class="col-lg-4 col-md-8 list__category">
+      <div>
+        <h3>Search Item</h3>
+        <form id="contact-form" action="">
+           <input id="search" type="search" class="form-control" placeholder="e.g. About us" autocomplete="off">
+        </form>
+      </div>
+      <div class="category">
+        <h3>Categories</h3>
+        <ul class="nav__category">
+          
+            <li class="item--category">
+              <a href="categories/#blog">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                blog
+              </a>
+            </li>
+          
+            <li class="item--category">
+              <a href="categories/#ddd">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                DDD
+              </a>
+            </li>
+          
+            <li class="item--category">
+              <a href="categories/#dd">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                dd
+              </a>
+            </li>
+          
+            <li class="item--category">
+              <a href="categories/#as">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                as
+              </a>
+            </li>
+          
+            <li class="item--category">
+              <a href="categories/#cff">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                cff
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <div class="tags">
+        <h3>Tag</h3>
+        <ul class="nav__tags">
+        <i class="fa fa-tag" aria-hidden="true"></i>
+          
+            <span>
+              <a href="tags/#blog">
+                #Blog   
+              </a>
+            </span>
+          
+            <span>
+              <a href="tags/#avc">
+                #avc   
+              </a>
+            </span>
+          
+        </ul>
+      </div>
+      </div>
       <div class="col-lg-8 col-md-10 mx-auto">
-
         
-
         <!-- Home Post List -->
-        
-
-        <article class="post-preview">
-          <a href="/blogs/demo/">
-            <h2 class="post-title">Initial Demo Post</h2>
-            
-            <h3 class="post-subtitle"></h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            ThangNC - D3
-            
-            on
-            June 08, 2020 &middot; <span class="reading-time" title="Estimated read time">
-  
-   1 min  read </span>
-            
-          </p>
-        </article>
-
-        <hr>
-
-        
-
-        <article class="post-preview">
-          <a href="/blogs/2017/10/27/dinosaurs.html">
-            <h2 class="post-title">Dinosaurs are extinct today</h2>
-            
-            <h3 class="post-subtitle">because they lacked opposable thumbs and the brainpower to build a space program.</h3>
-            
-          </a>
-          <p class="post-meta">Posted by
-            
-            D3-Fabbi
-            
-            on
-            October 27, 2017 &middot; <span class="reading-time" title="Estimated read time">
-  
-   4 mins  read </span>
-            
-          </p>
-        </article>
-
-        <hr>
-
-        
-
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="/blogs/posts">View All Posts &rarr;</a>
+        <div id="searchResult">
         </div>
-
+        <div id="allData">
+          
+          <article class="post-preview">
+            <a href="/blogs/django-gioi-thieu/">
+              <h2 class="post-title">Giới thiệu về Django</h2>
+              
+              <h3 class="post-subtitle">Giới thiệu về Django</h3>
+              
+            </a>
+            <p class="post-meta">Posted by
+               ThangNC-D3  on June 08, 2020          
+            </p>
+          </article>
+          <hr>
+          
+          <!-- Pager -->
+          <div class="clearfix">
+            <a class="btn btn-primary float-right" href="/blogs/posts">View All Posts &rarr;</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+
+<script type="text/javascript" src="/blogs/assets/fetch.js"></script>
+<script type="text/javascript">
+  const endpoint = '/blogs/assets/search.json';
+  const main_author =  'D3-Fabbi'
+  const pages = [];
+  fetch(endpoint)
+    .then(blob => blob.json())
+    .then(data => pages.push(...data))
+  function findResults(termToMatch, pages) {
+    return pages.filter(item => {
+      const regex = new RegExp(termToMatch, 'gi');
+      return item.title.match(regex) || item.content.match(regex);
+    });
+  }
+  function formatDate(date) {
+    if (date && date != ''){
+      let date_str = new Date(date)
+      return date_str.toDateString()
+    } else {
+      return ''
+    }
+  }
+  function displayResults() {
+    if (field.value && field.value != ''){
+      const resultsArray = findResults(this.value, pages);
+      const html = resultsArray.map(item => {
+      const url = item.url ? item.url : '';
+      const title = item.title ? item.title : '';
+      const subtitle = item.subtitle ? item.subtitle : '';
+      const author = (item.author && (item.author != '' || item.author != '\n' || item.author != '\r')) ? item.author : main_author;
+      let date = item.date ? item.date : '';
+      date = formatDate(date);
+      return `
+        <article class="post-preview">
+          <a href="${url}">
+            <h2 class="post-title">${title}</h2>
+            <h3 class="post-subtitle">${subtitle}</h3>
+          </a>
+          <p class="post-meta">Posted by ${author} on ${date}</p>
+        </article>`;
+      }).join('');
+      if ((resultsArray.length == 0) || (this.value == '')) {
+        resultsList.innerHTML = `<p>Sorry, nothing was found</p>`;
+        resultsList.style.display = "block";
+        allData.style.display = "none";
+      } else {
+        allData.style.display = "none";
+        resultsList.style.display = "block";
+        resultsList.innerHTML = html;
+      }
+    } else {
+      resultsList.style.display = "none";
+      allData.style.display = "block";
+    }
+  }
+  const allData = document.querySelector('#allData');
+  const field = document.querySelector('#search');
+  const resultsList = document.querySelector('#searchResult');
+  field.addEventListener('keyup', displayResults);
+  field.addEventListener('keypress', function(event) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+    }
+  });
+</script>
+<noscript>Please enable JavaScript to use the search form.</noscript>
 
 
   <!-- Footer -->

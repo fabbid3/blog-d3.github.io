@@ -1,0 +1,17 @@
+[
+  
+  
+    
+    
+      {
+        "title": "Giới thiệu về Django",
+        "excerpt": "Django – Giới thiệu\n\n",
+        "subtitle": "Giới thiệu về Django\n",
+        "content": "Django – Giới thiệu\n\nDjango là một web framework miễn phí mã nguồn mở được viết bằng Python. Django sử dụng mô hình Model-View-Control (MVC). Django được phát triển bởi Django Software Foundation(DSF) – một tổ chức phi lợi nhuận độc lập.\n\nMục tiêu chính của Django là đơn giản hóa việc tạo các website phức tạp có sử dụng cơ sở dữ liệu. Django tập trung vào tính năng “có thể tái sử dụng” và “có thể tự chạy” của các component, tính năng phát triển nhanh, không làm lại những gì đã làm. Một số website phổ biến được xây dựng từ Django là Pinterest, Instagram, Mozilla, và Bitbucket.\n\nCài đặt Django\n\nĐể có thể sử dụng Django thì bạn nhất định phải cài Python trong máy mình rồi, và khi cài thì Python có kèm theo một chương trình có tên là pip, đây là một phần mềm quản lý các gói mở rộng dành cho Python. Để cài đặt Django thì bạn sẽ dùng đến pip.\n\nBạn mở Command Prompt (cmd) lên và gõ lệnh:\n\npip install Django\n\n\nĐể Python cài đặt gói Django mới nhất, gói này sẽ nằm trong thư mục Lib/site-packages trong thư mục cài đặt Python, hoặc gõ lệnh:\n\npip install Django==1.9.4\n\n\nđể cài đặt gói Django phiên bản 1.9.4, đây là phiên bản mà mình sử dụng để viết series này.\n\nNếu khi cài Python bạn không cài pip thì bạn có thể lên trên trang GitHub của Django để tải về tại địa chỉ django\n\nXem phiên bản Django\n\nSau khi cài đặt xong gói Django, bạn có thể kiểm tra một số thông tin của gói này.\n\n## version.py\n\nimport django\nprint(django.get_version())\n\n\nBằng cách dùng phương thức django.get_version().\n\n## Output\n\n1.9.4\n\n\n",
+        "author": "ThangNC-D3\n",
+        "date": "2020-06-08 16:50:00 +0700\n",
+        "url": "/blogs/django-gioi-thieu/"
+      }
+    
+  
+]

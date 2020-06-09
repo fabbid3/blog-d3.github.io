@@ -2,6 +2,11 @@
 layout: post
 title: "Giới thiệu về Django"
 subtitle: "Giới thiệu về Django"
+author: "ThangNC-D3"
+categories: 
+    - blog
+tags: 
+    - Blog
 date: 2020-06-08 16:50:00 +0700
 background: '/img/posts/01.jpg'
 permalink: /django-gioi-thieu/
