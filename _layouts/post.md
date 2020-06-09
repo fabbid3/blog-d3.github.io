@@ -25,15 +25,15 @@ layout: default
             <br/><span class="meta">
               <i class="fa fa-list-alt" aria-hidden="true"></i>
                 {% for c in page.categories %}
-                  <span>{{ c }}</span>
+                  <span><a href="{{ site.baseurl }}/categories/#{{ c }}">{{ c }}</a></span>
                 {% endfor %}
             </span><br/>
             {% endif %}
             {% if page.tags %}
-            <span>
+            <span class="meta">
               <i class="fa fa-tag" aria-hidden="true"></i>
               {% for t in page.tags %}
-                <span>{{ t }}</span>
+                <span><a href="{{ site.baseurl }}/tags/#{{ t }}">{{ t }}</a></span>
               {% endfor %}
             </span>
             {% endif %}
